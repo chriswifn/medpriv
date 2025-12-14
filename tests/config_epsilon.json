@@ -1,0 +1,12 @@
+{
+	"identifiers": [
+		"name"
+	],
+	"quasiIdentifiers": [
+		"age",
+		"gender"
+	],
+	"inputFile": "input.csv",
+	"outputFile": "output.csv",
+	"epsilon": 0.1
+}

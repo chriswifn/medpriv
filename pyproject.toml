@@ -1,0 +1,53 @@
+[project]
+name = "medpriv"
+version = "0.1"
+
+dependencies = [
+	"pandas==2.2.2",
+	"numpy==2.0.0",
+]
+
+[project.scripts]
+medpriv = "medpriv.main:main"
+
+[project.optional-dependencies]
+documentation = [
+	"furo",
+	"sphinx-autoapi",
+	"Sphinx"
+]
+
+lint = [
+	"ruff",
+]
+
+test = [
+    "pytest",
+    "coverage"
+]
+
+[tool.ruff]
+exclude = [".venv", "docs"]
+line-length  = 120
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["D", "E", "F"]
+ignore = [
+	"D100",
+	"D102",
+	"D107",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+[tool.coverage.run]
+branch = true
+include = ["medpriv/*"]
+command_line = "-m pytest"
